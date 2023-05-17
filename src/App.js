@@ -18,8 +18,10 @@ function App() {
     setLoading(false);
   };
 
-  useEffect(() => {
-    fetchJobs();
+  useEffect(() => {  
+    setTimeout(() => {
+      fetchJobs();
+    }, 2000);
   }, []);
 
   if (loading) {
@@ -29,13 +31,14 @@ function App() {
   const { company, dates, duties, title } = jobs[value];
 
   return (
-    <section className="section">
-      <div className="title">
+    <section className="w-[90vw] my-20 mx-auto max-w-6xl">
+  
+      <div className="mb-16 text-center">
         <h2>experience</h2>
-        <div className="underline"></div>
+        <div className="w-20 mb-5 h-1 mx-auto bg-[#2caeba]"></div>
       </div>
-      <div className="jobs-center">
-        <div className="btn-container">
+      <div className="flex w-[80vw] flex-wrap md:flex-nowrap my-0 mx-auto max-w-6xl gap-x-12">
+        <div className="flex flex-row mb-16 md:flex-col">
           {jobs.map((item, index) => (
             <Job
               key={item.id}
@@ -52,7 +55,8 @@ function App() {
           duties={duties}
         />
       </div>
-      <button type="button" className="btn">
+      <button type="button" className="uppercase bg-[#2caeba] text-white py-[6px] px-3 tracking-wide font-semibold transition-all duration-300
+      text-sm border-solid border-transparent cursor-pointer shadow-[0 1px 3px rgba(0,0,0,0.2)] rounded block w-48 text-center mt-12 mx-auto hover:bg-[​#88ebf2] hover:text-[​#044e55]">
         more info
       </button>
     </section>

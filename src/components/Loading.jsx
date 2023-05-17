@@ -2,9 +2,10 @@ import React from 'react';
 
 const Loading = () => {
   return (
-    <section className="section loading">
-      <h1>Loading...</h1>
-    </section>
+    <div className="loading-container">
+      <div className="loading-spinner"></div>
+      <h2>Loading...</h2>
+    </div>
   );
 };
 
